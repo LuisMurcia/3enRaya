@@ -16,7 +16,8 @@ public class Jugador {
         this.sesion = sesion;
         this.nombre = nombre;
     }
-
+    
+    //Métodos
     public String getNombre() {
 
         return this.nombre;

@@ -15,6 +15,7 @@ public class Tablero {
         }
     }
 
+    //Métodos
     public boolean comprobarEmpate() {
         //Comprueba si todas las casillas estan llenas
         for (int row = 0; row < 3; row++) {

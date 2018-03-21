@@ -28,6 +28,7 @@ public class Partida {
         this.gameManagement(ranking);
     }
 
+    //Métodos
     public Tablero getTablero() {
         return this.tablero;
     }

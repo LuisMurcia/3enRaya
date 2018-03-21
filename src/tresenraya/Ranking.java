@@ -13,6 +13,7 @@ class Ranking {
 
     }
 
+    //Métodos
     public void addDerrota() {
         this.perdidas++;
     }

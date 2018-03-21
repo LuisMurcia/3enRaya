@@ -7,9 +7,10 @@ public class IA0 extends Jugador {
 
         super(sesion, name);
     }
-
+    
+    //Métodos
     public int[] mover(Tablero tablero) {
-        //Llama a un metodo del tablero que busca el primer sitio vacio.
+        //Llamamos un método que mueve la ficha de la IA en el primer sitio disponible
         return tablero.moverIA();
     }
     

@@ -9,12 +9,13 @@ public class Sesion {
     private Jugador IA;
     private Partida partida;
     private Ranking ranking;
-
+    
     //Constructor
     public Sesion() {
 
     }
 
+    //Métodos
     private void newIA(String name) {
         this.IA = new IA0(this, name);
     }
