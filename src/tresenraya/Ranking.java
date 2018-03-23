@@ -3,10 +3,10 @@ package tresenraya;
 class Ranking {
 
     //Atributos
-    private int empates = 0;
-    private int ganadas = 0;
-    private int partidas = 0;
-    private int perdidas = 0;
+    private int defeats = 0;
+    private int draw = 0;
+    private int games = 0;
+    private int wins = 0;
 
     //Constructor
     public Ranking(Jugador player) {
@@ -14,28 +14,27 @@ class Ranking {
     }
 
     //Métodos
-    public void addDerrota() {
-        this.perdidas++;
+    public void addDefeat() {
+        this.defeats++;
     }
 
-    public void addEmpate() {
-        this.empates++;
+    public void addDraw() {
+        this.draw++;
     }
 
-    public void addPartida() {
-        this.partidas++;
+    public void addGame() {
+        this.games++;
     }
 
-    public void addVictoria() {
-        this.ganadas++;
+    public void addWin() {
+        this.wins++;
     }
 
     public void showRanking(Jugador jugador) {
-
-        System.out.println(jugador.getNombre() + " ha jugado " + this.partidas + " partidas.");
-        System.out.println(jugador.getNombre() + " ha ganado " + this.ganadas + " partidas.");
-        System.out.println(jugador.getNombre() + " ha empatado " + this.empates + " partidas.");
-        System.out.println(jugador.getNombre() + " ha perdido " + this.perdidas + " partidas.");
+        System.out.println(jugador.getName() + " has played " + this.games + " games.");
+        System.out.println(jugador.getName() + " has won " + this.wins + " games.");
+        System.out.println(jugador.getName() + " has tied " + this.draw + " games.");
+        System.out.println(jugador.getName() + " has lost " + this.defeats + " games.");
         System.out.println("");
     }
 

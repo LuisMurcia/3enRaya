@@ -5,60 +5,54 @@ import java.util.Scanner;
 public class Jugador {
 
     //Atributos
-    private Partida Partida;
-    private Sesion sesion;
+    private Partida game;
+    private String name;
+    private Sesion session;
     private char token;
-    private String nombre;
 
     //Constructor
     public Jugador(Sesion sesion, String nombre) {
-
-        this.sesion = sesion;
-        this.nombre = nombre;
+        this.session = sesion;
+        this.name = nombre;
     }
-    
+
     //Métodos
-    public String getNombre() {
-
-        return this.nombre;
+    public Partida getGame() {
+        return this.game;
     }
 
-    public Partida getPartida() {
-
-        return this.Partida;
+    public String getName() {
+        return this.name;
     }
 
     public char getToken() {
-
         return this.token;
     }
 
-    public int[] mover(Tablero tablero) {
+    public int[] move(Tablero tablero) {
         //Crea una array con las cordenadas y les da un valor por defecto
         int coordinates[] = new int[2];
         coordinates[0] = 0;
         coordinates[1] = 0;
-        //Scaner para leer los datos entregados por teclado
+        //Lee los datos introducidos por teclado
         Scanner scanner = new Scanner(System.in);
         //Preguntar fila
-        System.out.print("Selecciona una fila: ");
+        System.out.print("Choose row: ");
         coordinates[0] = scanner.nextInt();
         System.out.println("");
         //Preguntar columna
-        System.out.print("Selecciona una columna: ");
+        System.out.print("Choose column: ");
         coordinates[1] = scanner.nextInt();
         System.out.println("");
         //Devolver coordenadas
         return coordinates;
     }
 
-    public void setPartida(Partida partida) {
-        
-        this.Partida = partida;
+    public void setGame(Partida partida) {
+        this.game = partida;
     }
 
     public void setToken(char token) {
-        
         this.token = token;
     }
 

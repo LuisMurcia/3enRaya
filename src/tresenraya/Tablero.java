@@ -16,7 +16,7 @@ public class Tablero {
     }
 
     //Métodos
-    public boolean comprobarEmpate() {
+    public boolean checkTie() {
         //Comprueba si todas las casillas estan llenas
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
@@ -30,7 +30,7 @@ public class Tablero {
         return true;
     }
 
-    public boolean comprobarGanador() {
+    public boolean checkWinner() {
         //Comprueba si hay una victoria horizontal
         for (int row = 0; row < cell.length; row++) {
             if (cell[row][0] == cell[row][1] && cell[row][1] == cell[row][2] && cell[row][0] != ' ') {
@@ -59,7 +59,7 @@ public class Tablero {
         return false;
     }
 
-    public int[] moverIA() {
+    public int[] moveIA() {
         //Crear array con coordenadas
         int coordinates[] = new int[2];
         coordinates[0] = 0;
@@ -82,11 +82,11 @@ public class Tablero {
 
     public boolean setCell(int row, int col, char value) {
         //Comprobar si el movimiento es valido
-        if (this.validarMovimiento(row, col, value) == true) {
+        if (this.validateMovement(row, col, value) == true) {
             //Ejecutar el movimiento
             this.cell[row][col] = value;
             //Anunciar que el movimiento se ejecuto
-            System.out.println("El movimiento " + value + " a " + row + " " + col + " se ejecuto correctamente.");
+            System.out.println("The movement " + value + " a " + row + " " + col + " was executed correctly.");
             System.out.println();
             //Devolvemos True por que se ejecuto el movimiento
             return true;
@@ -95,13 +95,13 @@ public class Tablero {
         return false;
     }
 
-    public void showTablero() {
+    public void showBoard() {
         //Imprimir encabezado
-        System.out.print("      [0]  [1]  [2] ");
+        System.out.print("      |0|  |1|  |2| ");
         System.out.println("");
         //Imprimir contenido de las celdas y guia lateral
         for (int row = 0; row < 3; row++) {
-            System.out.print(" [" + row + "] ");
+            System.out.print(" |" + row + "| ");
             for (int col = 0; col < 3; col++) {
                 System.out.print(" [" + this.cell[row][col] + "] ");
             }
@@ -110,11 +110,11 @@ public class Tablero {
         System.out.println("");
     }
 
-    public boolean validarMovimiento(int row, int col, char value) {
+    public boolean validateMovement(int row, int col, char value) {
         //Comprobar que la casilla existe
         if (row > 2 || row < 0 || col > 2 || col < 0) {
             //Anunciamos que el Movimiento es invalido
-            System.out.println("El movimiento " + value + " a " + row + " " + col + " es invalido.");
+            System.out.println("The movement " + value + " a " + row + " " + col + " is invalid.");
             System.out.println();
             //Devolvemos False para denegar el movimiento
             return false; //End  
@@ -122,13 +122,13 @@ public class Tablero {
         //Comprobar que la casilla deseada este vacia
         if (this.cell[row][col] != ' ') {
             //Anunciamos que el Movimiento es invalido
-            System.out.println("El movimiento " + value + " a " + row + " " + col + " es invalido.");
+            System.out.println("The movement " + value + " a " + row + " " + col + " in invalid.");
             System.out.println();
             //Devolvemos False para denegar el movimiento
             return false; //End  
         }
         //Anunciar que el movimento es correcto
-        System.out.println("El movimiento " + value + " a " + row + " " + col + " es valido.");
+        System.out.println("The movement " + value + " a " + row + " " + col + " is valid.");
         System.out.println();
         //Devolver True para permitir el movimiento.
         return true;
